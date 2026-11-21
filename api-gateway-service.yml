@@ -3,6 +3,7 @@ server:
 
 app:
   security:
+    trust-inbound-headers: false
     public-rotes:
       - "/v1/auth/**"
       - "/webhook/**"
