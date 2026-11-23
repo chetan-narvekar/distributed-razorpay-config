@@ -57,17 +57,19 @@ management:
   endpoints:
     web:
       exposure:
-        includes: health,info,prometheus
+        include: health,info,prometheus
+
+  endpoint:
+    prometheus:
+      access: unrestricted
+
   tracing:
     sampling:
       probability: 1.0
-  zipkins:
-    tracing:
-      endpoints: http://localhost:9411/api/v2/spans
+
   metrics:
     tags:
       application: ${spring.application.name}
-        
 
 logging:
   level:
